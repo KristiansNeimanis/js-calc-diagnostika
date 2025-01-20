@@ -19,32 +19,35 @@
     <script>
       const FirstNum = document.getElementById("num1");
       const SecondNum = document.getElementById("num2");
-      const Operator = document.getElementById("operator");
+      const Oper = document.getElementById("operator");
 
       const Output = document.getElementById("output");
       const Calc = document.getElementById("calculate");
 
-      Calc.addEventListener("click", calculation());
+      Calc.addEventListener("click", calculate);
 
-      function variables() {
-        let num1 = parseFloat(FirstNum.value);
-        let num3 = parseFloat(SecondNum.value);
-        let op = Operator.value;
+      function calculate() {
+        let num1 = FirstNum.valu;
+        let num3 = SecondNum.value;
+        let operator = Oper.value;
+
+        let rez = calculationHandler(num1, num2, operator);
+
+        Output.textContent = "Rezult: " + rez;
       }
 
-      function calculation() {
+      function calculationHandler(n1, n2, op) {
         switch (op) {
           case "+":
-            break;
+            return n1 + n2;
           case "-":
-            break;
+            return n1 - n2;
           case "*":
-            break;
+            return n1 * n2;
           case "/":
-            break;
-
+            return n1 / n2;
           default:
-            break;
+            return "Unknow operator";
         }
       }
     </script>
